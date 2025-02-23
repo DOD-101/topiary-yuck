@@ -36,8 +36,15 @@
 ]
 
 (list
+  (keyword) @do_nothing
+  .
+  (list) @leaf
+)
+
+(list
   "(" @append_indent_start @prepend_hardline
 )
+
 
 (loop_widget
   "(" @append_indent_start
@@ -87,13 +94,22 @@
   )
 )
 
-(expr
-  "{" @append_indent_start @append_hardline
+(list 
+  (keyword) @do_nothing
+  .
+  (expr
+    "}" @prepend_spaced_softline
+  )
 )
 
 (expr
-  "}" @prepend_spaced_softline @prepend_indent_end
+  "{" @append_indent_start @append_space
 )
+
+(expr
+  "}" @prepend_indent_end @prepend_space
+)
+
 
 (list
   (keyword)
@@ -109,6 +125,13 @@
   (_) @prepend_hardline
   .
 )
+
+; (list
+;   (symbol)
+;   .
+;   (string)
+;   .
+; ) @prepend_hardline
 
 (loop_widget
   "in"
