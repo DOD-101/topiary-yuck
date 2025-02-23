@@ -1,0 +1,13 @@
+(defwidget bar0 [ workspaces ]
+(centerbox :orientation "h"
+(box :class "left" :orientation "h" :space-evenly false :halign "start"
+
+(hwinfo)
+(workspaces :workspaces workspaces))
+(box :class "center" :orientation "h" :space-evenly false :halign "center"
+(time_playing)) (box
+:class "right" :orientation "h" :space-evenly false :halign "end"
+
+(status_info)
+(volume)
+(battery))))

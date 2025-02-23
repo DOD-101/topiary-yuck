@@ -1,0 +1,14 @@
+(defwindow BarWin0
+  :monitor 0
+  :stacking "foreground"
+  :exclusive true
+  :focusable false
+  :geometry
+  (geometry ; FIXME: It would be better to have this on the line above
+    :x "5px"
+    :y "10px"
+    :width "99%"
+    :height "10px"
+    :anchor "top center")
+  (bar0
+    :workspaces "[1, 2, 3]"))

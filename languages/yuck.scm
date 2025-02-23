@@ -36,15 +36,8 @@
 ]
 
 (list
-  (keyword) @do_nothing
-  .
-  (list) @leaf
-)
-
-(list
   "(" @append_indent_start @prepend_hardline
 )
-
 
 (loop_widget
   "(" @append_indent_start
@@ -86,52 +79,24 @@
   "?" @prepend_spaced_softline
 )
 
-(list
-  (keyword) @do_nothing
-  .
-  (expr
-    "{" @append_spaced_softline
-  )
-)
-
-(list 
-  (keyword) @do_nothing
-  .
-  (expr
-    "}" @prepend_spaced_softline
-  )
+(expr
+  "{" @append_indent_start @append_spaced_softline
 )
 
 (expr
-  "{" @append_indent_start @append_space
-)
-
-(expr
-  "}" @prepend_indent_end @prepend_space
-)
-
-
-(list
-  (keyword)
-  .
-  (_) @append_hardline
-  .
+  "}" @prepend_indent_end @prepend_spaced_softline
 )
 
 (list
   (keyword) ; to make it not apply to include statements
-  (_)+
+  [
+    (keyword) @do_nothing
+    (_)+
+  ]
   .
-  (_) @prepend_hardline
+  (_) @prepend_empty_softline
   .
 )
-
-; (list
-;   (symbol)
-;   .
-;   (string)
-;   .
-; ) @prepend_hardline
 
 (loop_widget
   "in"

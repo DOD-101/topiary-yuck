@@ -17,5 +17,4 @@
               : l.type == "special"
               ? '(special_key :letter `${l.key}` :width `${l.width}` :onclick `${l.onclick}` :class `${l.class ?: ""}`)'
               : `(key :letter "error")`
-            }
-          ))))))
+            }))))))

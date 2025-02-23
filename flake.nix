@@ -53,8 +53,9 @@
         });
 
         devShells.default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.topiary
+          buildInputs = with pkgs; [
+            topiary
+            graphviz
             packages.default
           ];
         };
