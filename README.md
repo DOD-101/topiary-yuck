@@ -1,6 +1,6 @@
 # topiary-yuck
 
-> Topiary config to format yuck code
+> Format your yuck files using Topiary
 
 ## Usage
 
@@ -12,11 +12,27 @@ TOPIARY_LANGUAGES_DIR="path/to/topiary-yuck/languages/"
 ```
 
 <!-- TODO: Add section on how to use with other languages -->
-<!-- TODO: Add section on nix usage, if I add some nix related stuff -->
+
+### Using nix
+
+If you're using nix/NixOS you can use the provided [flake](./flake.nix) to install `topiary-yuck`, which just wraps topiary.
+
+This also means that you can still use topiary to format other file types, without any additional config.
 
 ## Formatting style
 
-Check out the `./tests/expected_*.yuck` files to see for yourself what the output looks like.
+```yuck
+(defwidget animalButton [ emoji ]
+  (box
+    :class "animalLayout"
+    (eventbox
+      :class `animal ${selected == emoji ? "selected" : ""}`
+      :cursor "pointer"
+      :onhover "eww update selected=${emoji}"
+      emoji)))
+```
+
+For more examples check out the `./tests/expected_*.yuck` files.
 
 ## Acknowledgements
 
