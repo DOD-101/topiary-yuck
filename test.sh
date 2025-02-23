@@ -33,3 +33,5 @@ for f in ./tests/input_*.yuck; do
 done
 
 printf "\nTest results: $GREEN%s$NC succeded, $RED%s$NC failed\n" "$succeded" "$failed"
+
+exit "$failed"
