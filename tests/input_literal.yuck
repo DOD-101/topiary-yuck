@@ -1,0 +1,26 @@
+(defwidget osk [ ]
+(box
+:class "osk osk-layout"
+:orientation "v"
+:space-evenly false
+:halign "center"
+(for row in "${jq(osk_data,".[${osk_layer}]")}"
+(box
+:class "osk-row"
+:space-evenly false
+:halign "center"
+(for l in row
+(literal
+:content {
+l.type == "normal"
+? `(key :letter "${l.key}")`
+: l.type == "special"
+? '(special_key :letter `${l.key}` :width `${l.width}` :onclick `${l.onclick}` :class `${l.class ?: ""}`)'
+: `(key :letter "error")`
+}
+)
+)
+)
+)
+)
+)

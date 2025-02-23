@@ -1,0 +1,12 @@
+; comment one
+
+; comment two
+
+; comment three
+(defpoll bluetooth
+
+  ; comment four
+:interval "10s" ; comment five
+
+          ; comment six
+"bluetoothctl devices Connected") ; checks if you have a bluetooth device connected
