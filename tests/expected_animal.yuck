@@ -5,4 +5,4 @@
       :class `animal ${selected == emoji ? "selected" : ""}`
       :cursor "pointer"
       :onhover "eww update selected=${emoji}"
-      "hello")))
+      emoji)))
